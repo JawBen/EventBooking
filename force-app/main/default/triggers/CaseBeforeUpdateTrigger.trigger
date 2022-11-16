@@ -1,6 +1,6 @@
 trigger CaseBeforeUpdateTrigger on Case (before update, after update) {
 
-    Boolean requestSentToExternalSystem = false;
+    /*Boolean requestSentToExternalSystem = false;
     Integer i=0;
     
     Case request = Trigger.new[0];
@@ -9,5 +9,9 @@ trigger CaseBeforeUpdateTrigger on Case (before update, after update) {
     if(r.Status == 'Closed'){
         ExternalSystemService service = new ExternalSystemService();
         service.registerAttendees(r);
-    }
+    }*/
+
+    //Call the method UpdateCase from the new created Class
+    CaseManagement.updateHandler(Trigger.new);
+
 }

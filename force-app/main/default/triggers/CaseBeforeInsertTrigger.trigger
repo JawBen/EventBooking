@@ -1,6 +1,6 @@
 trigger CaseBeforeInsertTrigger on Case (before insert) {
     // WE GET THE CASE FIRST 
-    Case r = Trigger.new[0];
+    /*Case r = Trigger.new[0];
     
     // Testing if the content of case is null or not to avoid NPE ;) 
     if(r != null && r.AccountId != null){
@@ -29,6 +29,7 @@ trigger CaseBeforeInsertTrigger on Case (before insert) {
 
     }else {
         r.addError('You cannot create a request without attaching an account');
-    }
+    } */
+    CaseManagement.insertHandler(Trigger.new);
 
 }
